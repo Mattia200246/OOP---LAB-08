@@ -10,8 +10,13 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -74,7 +79,13 @@ public class BadIOGUI {
         read.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println("button pressed");
+                try (final InputStream file = new FileInputStream(PATH);
+                     final DataInputStream dstream = new DataInputStream(file)
+                ){
+                    System.out.println(dstream.readInt());
+                }catch (IOException e1){
+                    JOptionPane.showMessageDialog(read, "ERROR");
+                }
             }
         });
     }
