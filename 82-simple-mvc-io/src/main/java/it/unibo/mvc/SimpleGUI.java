@@ -1,9 +1,16 @@
 package it.unibo.mvc;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -23,12 +30,19 @@ public final class SimpleGUI {
         final LayoutManager layout = new BorderLayout();
         canvas.setLayout(layout);
 
+
+        //assembling gui
         canvas.add(text, BorderLayout.CENTER);
         canvas.add(save, BorderLayout.SOUTH);
-
-        
-        
         frame.setContentPane(canvas);
+
+        //set dimension
+        final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        final int sw = (int) screen.getWidth();
+        final int sh = (int) screen.getHeight();
+
+        frame.setSize(sw/2, sh/2);
+        frame.setLocationByPlatform(true);
 
     }
 
