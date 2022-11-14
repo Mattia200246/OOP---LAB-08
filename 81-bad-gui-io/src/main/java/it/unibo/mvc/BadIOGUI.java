@@ -74,12 +74,12 @@ public class BadIOGUI {
         read.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                try{
+                try {
                     final List<String> lines = Files.readAllLines(new File(PATH).toPath());
-                    for(final var line : lines){
+                    for (final var line : lines) {
                         System.out.println(line);
                     }
-                }catch (IOException e1){
+                } catch (IOException e1) {
                     JOptionPane.showMessageDialog(read, "ERROR");
                 }
             }
@@ -111,7 +111,6 @@ public class BadIOGUI {
 
         frame.pack();
         frame.setVisible(true);
-        
     }
 
     /**
@@ -122,4 +121,6 @@ public class BadIOGUI {
     public static void main(final String... args) {
        new BadIOGUI().display();
     }
+
 }
+
