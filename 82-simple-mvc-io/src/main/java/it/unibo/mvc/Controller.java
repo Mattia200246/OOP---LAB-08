@@ -15,6 +15,15 @@ public class Controller {
 
     private File file = new File (HOME+ File.separator+ DEFAULT_FILE);
 
+    public void setFile(final File newfile){
+        final File parent = newfile.getParentFile();
+        if(parent.exists()){
+            file = newfile;
+        }else{
+            throw new IllegalArgumentException("Non existing folder");
+        }
+    }
+
     public File getCurrentFile(){
         return file;
     }   
