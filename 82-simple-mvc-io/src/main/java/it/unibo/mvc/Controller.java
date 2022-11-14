@@ -11,8 +11,9 @@ import java.nio.charset.StandardCharsets;
 public class Controller {
     
     private final static String HOME = System.getProperty("user.home");
+    private final static String DEFAULT_FILE = "output.txt";
 
-    private File file = new File (HOME+File.separator+"output.txt");
+    private File file = new File (HOME+ File.separator+ DEFAULT_FILE);
 
     public File getCurrentFile(){
         return file;
