@@ -12,7 +12,7 @@ public final class SimpleGUI {
 
     private final JFrame frame = new JFrame();
 
-    private SimpleGUI(){
+    private SimpleGUI(Controller controller){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         final JPanel canvas = new JPanel();
         final JButton save = new JButton("save");
@@ -21,8 +21,15 @@ public final class SimpleGUI {
         canvas.add(text, BorderLayout.SOUTH);
         canvas.add(save, BorderLayout.CENTER);
 
+    }
 
+    public void display(){
+        frame.setVisible(true);
+    }
 
+    public static void main(final String... a) {
+        final SimpleGUI gui = new SimpleGUI(new Controller());
+        gui.display();
     }
 
 }
