@@ -24,11 +24,25 @@ public final class SimpleGUI {
 
     private SimpleGUI(Controller controller){
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        final JPanel canvas = new JPanel();
-        final JButton save = new JButton("save");
         final JTextArea text = new JTextArea();
         final LayoutManager layout = new BorderLayout();
+        final JPanel canvas = new JPanel();
         canvas.setLayout(layout);
+        final JButton save = new JButton("save");
+        save.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                try{
+                    controller.save(text.getText());
+                }catch(IOException e){
+                    JOptionPane.showMessageDialog(save, "Error");
+                }
+                
+            }
+            
+        });
+        
 
 
         //assembling gui
