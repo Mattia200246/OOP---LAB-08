@@ -1,8 +1,11 @@
 package it.unibo.mvc;
 
 import java.awt.BorderLayout;
-
-import javax.swing.*;
+import java.awt.LayoutManager;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 /**
  * A very simple program using a graphical interface.
@@ -17,9 +20,15 @@ public final class SimpleGUI {
         final JPanel canvas = new JPanel();
         final JButton save = new JButton("save");
         final JTextArea text = new JTextArea();
+        final LayoutManager layout = new BorderLayout();
+        canvas.setLayout(layout);
 
-        canvas.add(text, BorderLayout.SOUTH);
-        canvas.add(save, BorderLayout.CENTER);
+        canvas.add(text, BorderLayout.CENTER);
+        canvas.add(save, BorderLayout.SOUTH);
+
+        
+        
+        frame.setContentPane(canvas);
 
     }
 
