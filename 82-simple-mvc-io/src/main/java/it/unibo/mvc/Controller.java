@@ -15,6 +15,10 @@ public class Controller {
         return file;
     }   
 
+    public String getCurrentPath(){
+        return file.getPath();
+    }
+
 
 
 
