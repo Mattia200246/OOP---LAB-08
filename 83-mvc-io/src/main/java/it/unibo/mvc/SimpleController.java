@@ -28,8 +28,7 @@ public final class SimpleController implements Controller {
 
     @Override
     public void printCurrentString() {
-        // TODO Auto-generated method stub
-
+        System.out.println(nextString);
     }
 
 }
