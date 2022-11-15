@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -36,8 +37,11 @@ public final class SimpleGUIWithFileChooser {
 
         JTextField text = new JTextField();
         text.setEditable(false);
+        JTextArea textArea = new JTextArea();
+
 
         final JButton save = new JButton("save");
+
         final JButton browse = new JButton("Browse...");
         browse.addActionListener(new ActionListener(){
 
@@ -65,6 +69,7 @@ public final class SimpleGUIWithFileChooser {
         canvas_up.add(browse, BorderLayout.LINE_END);
         canvas.add(canvas_up, BorderLayout.NORTH);
         canvas.add(save, BorderLayout.SOUTH);
+        canvas.add(textArea, BorderLayout.CENTER);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(canvas);
