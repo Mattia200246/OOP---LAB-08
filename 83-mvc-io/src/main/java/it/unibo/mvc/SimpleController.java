@@ -23,13 +23,13 @@ public final class SimpleController implements Controller {
 
     @Override
     public List<String> history() {
-        
+        return this.history;
     }
 
     @Override
     public void printCurrentString() {
         // TODO Auto-generated method stub
-        
+
     }
 
 }
