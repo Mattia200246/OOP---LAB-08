@@ -35,6 +35,7 @@ public final class SimpleGUIWithFileChooser {
         final int wh = (int) dimension.getWidth();
         final int ht = (int) dimension.getHeight();
         frame.setSize(wh/2, ht/2);
+        frame.setLocationByPlatform(true);
     }
 
     void display(){
