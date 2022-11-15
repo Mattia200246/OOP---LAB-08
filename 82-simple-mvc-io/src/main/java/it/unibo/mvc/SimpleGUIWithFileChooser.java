@@ -41,6 +41,18 @@ public final class SimpleGUIWithFileChooser {
 
 
         final JButton save = new JButton("save");
+        save.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    controller.save(textArea.getText());
+                } catch (IOException i) {
+                    JOptionPane.showMessageDialog(null, i.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            
+        });
 
         final JButton browse = new JButton("Browse...");
         browse.addActionListener(new ActionListener(){
