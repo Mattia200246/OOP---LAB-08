@@ -7,6 +7,7 @@ import java.util.List;
  *
  */
 public final class SimpleController implements Controller {
+    private String nextString;
 
     @Override
     public void setNextString(String string) {
@@ -15,8 +16,8 @@ public final class SimpleController implements Controller {
     }
 
     @Override
-    public void getNextString() {
-        // TODO Auto-generated method stub
+    public String getNextString() {
+        return this.nextString;
         
     }
 

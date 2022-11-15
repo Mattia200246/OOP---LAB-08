@@ -8,7 +8,7 @@ import java.util.List;
 public interface Controller {
     void setNextString(String string);
 
-    void getNextString();
+    String getNextString();
 
     List<String> history();
 
