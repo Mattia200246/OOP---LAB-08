@@ -2,6 +2,21 @@ package it.unibo.mvc;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 
 /**
@@ -23,6 +38,20 @@ public final class SimpleGUIWithFileChooser {
         text.setEditable(false);
 
         final JButton browse = new JButton("Browse...");
+        browse.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                final JFileChooser choose = new JFileChooser();
+                final int choice = choose.showSaveDialog(frame);
+                if(choice == JFileChooser.APPROVE_OPTION){
+                    final File new_file = choose.getSelectedFile();
+                    controller.setFile(new_file);
+                }
+                
+            }
+            
+        });
         
         canvas_up.add(text, BorderLayout.CENTER);
         canvas_up.add(browse, BorderLayout.LINE_END);
