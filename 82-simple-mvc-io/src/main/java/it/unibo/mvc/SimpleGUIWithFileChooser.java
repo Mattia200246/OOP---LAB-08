@@ -46,6 +46,7 @@ public final class SimpleGUIWithFileChooser {
             public void actionPerformed(ActionEvent e){
                 try{
                     controller.save(textArea.getText());
+                    textArea.setText("");
                     textArea.requestFocus();
                 } catch (IOException i) {
                     JOptionPane.showMessageDialog(null, i.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
