@@ -11,14 +11,13 @@ public final class SimpleController implements Controller {
 
     @Override
     public void setNextString(String string) {
-        // TODO Auto-generated method stub
+        this.nextString = string;
         
     }
 
     @Override
     public String getNextString() {
         return this.nextString;
-        
     }
 
     @Override
