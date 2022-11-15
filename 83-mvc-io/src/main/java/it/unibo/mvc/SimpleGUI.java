@@ -30,6 +30,12 @@ public final class SimpleGUI {
         canvasSouth.add(print);
         canvasSouth.add(viewHistory);
 
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        final int width = (int) dimension.getWidth();
+        final int height = (int) dimension.getHeight();
+        frame.setSize(width/2, height/2);
+        frame.setLocationByPlatform(true);
+
         
     }
 
