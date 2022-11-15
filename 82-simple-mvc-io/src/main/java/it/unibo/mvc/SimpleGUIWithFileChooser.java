@@ -1,7 +1,6 @@
 package it.unibo.mvc;
 
-import javax.swing.*;
-import java.awt.*;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -9,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -36,6 +34,7 @@ public final class SimpleGUIWithFileChooser {
         canvas_up.setLayout(new BorderLayout());
 
         JTextField text = new JTextField();
+        text.setText(controller.getCurrentPath());
         text.setEditable(false);
         JTextArea textArea = new JTextArea();
 
