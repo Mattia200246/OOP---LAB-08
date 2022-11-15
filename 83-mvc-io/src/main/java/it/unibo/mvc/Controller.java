@@ -8,7 +8,7 @@ public interface Controller {
 
     getNextString();
 
-    List<String> history()
+    List<String> history();
 
-    printCurrentString()
+    printCurrentString();
 }
