@@ -15,10 +15,13 @@ public final class SimpleGUIWithFileChooser {
     public SimpleGUIWithFileChooser(Controller controller){
         final JPanel canvas = new JPanel();
         final JPanel canvas_up = new JPanel();
+
         canvas.setLayout(new BorderLayout());
         canvas_up.setLayout(new BorderLayout());
+
         JTextField text = new JTextField();
         text.setEditable(false);
+
         final JButton browse = new JButton("Browse...");
         
         canvas_up.add(text, BorderLayout.CENTER);
@@ -27,7 +30,11 @@ public final class SimpleGUIWithFileChooser {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(canvas);
-        
+
+        final Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        final int wh = (int) dimension.getWidth();
+        final int ht = (int) dimension.getHeight();
+        frame.setSize(wh/2, ht/2);
     }
 
     void display(){
