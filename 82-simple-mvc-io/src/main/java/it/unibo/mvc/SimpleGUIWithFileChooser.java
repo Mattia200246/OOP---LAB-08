@@ -44,15 +44,17 @@ public final class SimpleGUIWithFileChooser {
             public void actionPerformed(ActionEvent e) {
                 final JFileChooser choose = new JFileChooser();
                 final int choice = choose.showSaveDialog(frame);
-                if(choice == JFileChooser.APPROVE_OPTION){
-                    final File new_file = choose.getSelectedFile();
-                    controller.setFile(new_file);
-                }else if (choice == JFileChooser.APPROVE_OPTION){
-                    ;
-                }else{
-                    JOptionPane.showMessageDialog(frame, choice, "Error", JOptionPane.ERROR_MESSAGE);
+                switch (choice){
+                    default:
+                        JOptionPane.showMessageDialog(frame, choice, "Error", JOptionPane.ERROR_MESSAGE);
+                    case JFileChooser.APPROVE_OPTION:
+                        final File new_file = choose.getSelectedFile();
+                        controller.setFile(new_file);
+                        break;
+                    
+                    case JFileChooser.CANCEL_OPTION:
+                        break;
                 }
-                
             }
             
         });
