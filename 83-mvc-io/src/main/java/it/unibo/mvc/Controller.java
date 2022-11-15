@@ -1,14 +1,16 @@
 package it.unibo.mvc;
 
+import java.util.List;
+
 /**
  *
  */
 public interface Controller {
-    setNextString(String string);
+    void setNextString(String string);
 
-    getNextString();
+    void getNextString();
 
     List<String> history();
 
-    printCurrentString();
+    void printCurrentString();
 }
