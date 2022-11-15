@@ -50,6 +50,7 @@ public final class SimpleGUIWithFileChooser {
                     case JFileChooser.APPROVE_OPTION:
                         final File new_file = choose.getSelectedFile();
                         controller.setFile(new_file);
+                        text.setText(new_file.getAbsolutePath());
                         break;
                     
                     case JFileChooser.CANCEL_OPTION:
