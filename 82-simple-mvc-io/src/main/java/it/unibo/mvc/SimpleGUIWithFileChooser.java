@@ -47,6 +47,10 @@ public final class SimpleGUIWithFileChooser {
                 if(choice == JFileChooser.APPROVE_OPTION){
                     final File new_file = choose.getSelectedFile();
                     controller.setFile(new_file);
+                }else if (choice == JFileChooser.APPROVE_OPTION){
+                    ;
+                }else{
+                    JOptionPane.showMessageDialog(frame, choice, "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 
             }
