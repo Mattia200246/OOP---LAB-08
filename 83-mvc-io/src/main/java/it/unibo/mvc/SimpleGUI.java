@@ -32,6 +32,7 @@ public final class SimpleGUI {
                 controller.setNextString(textField.getText());
                 controller.printCurrentString();
                 textField.setText("");
+                textField.requestFocus();
 
             }
         });
