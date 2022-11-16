@@ -2,6 +2,8 @@ package it.unibo.mvc;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * A very simple program using a graphical interface.
@@ -21,6 +23,12 @@ public final class SimpleGUI {
         JTextArea textArea = new JTextArea();
         JTextField textField = new JTextField();
         JButton print = new JButton("Print");
+        print.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(textField.getText());
+            }
+        });
         JButton viewHistory = new JButton("View History");
 
         frame.setContentPane(canvas);
