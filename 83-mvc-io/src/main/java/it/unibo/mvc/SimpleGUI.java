@@ -18,15 +18,15 @@ public final class SimpleGUI {
     public SimpleGUI(Controller controller){
         this.controller = controller;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel canvas = new JPanel();
+        final JPanel canvas = new JPanel();
         JPanel canvasSouth = new JPanel();
         canvas.setLayout(new BorderLayout());
         canvasSouth.setLayout(new BoxLayout(canvasSouth, BoxLayout.LINE_AXIS));
 
-        JTextArea textArea = new JTextArea();
+        final JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
-        JTextField textField = new JTextField();
-        JButton print = new JButton("Print");
+        final JTextField textField = new JTextField();
+        final JButton print = new JButton("Print");
         print.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,12 +37,12 @@ public final class SimpleGUI {
 
             }
         });
-        JButton viewHistory = new JButton("View History");
+        final JButton viewHistory = new JButton("View History");
         viewHistory.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<String> history = SimpleGUI.this.controller.history();
+                final List<String> history = SimpleGUI.this.controller.history();
                 String finalText= "";
                 for(String i : history ){
                     finalText= finalText + i + "\n";
@@ -76,5 +76,14 @@ public final class SimpleGUI {
     public static void main(final String... a){
         new SimpleGUI(new SimpleController()).display();
     }
+
+
+    //NON HO USATO ALCUNE COSTANTI
+    //MANCAVANO MOLTI FINAL 
+    //NON HO USATO STRING BUILDER MA SOLAMENTE UNA VARIABILE ACCUMULATORE STRINGA
+    //NON INSERITO UN IF NEL ACTIONLISTENER DEL BOTTONE VIEWHISTORY
+    //ALCUNE DIFFICOLTA NELLA VISUALIZZAZIONE DEI BOTTONI PRINT E VIEWHISTORY
+    
+
 
 }
