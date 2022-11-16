@@ -29,6 +29,7 @@ public final class SimpleController implements Controller {
     @Override
     public void printCurrentString() {
         System.out.println(nextString);
+        history.add(nextString);
     }
 
 }
