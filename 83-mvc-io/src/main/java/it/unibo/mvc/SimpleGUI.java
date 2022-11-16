@@ -24,6 +24,7 @@ public final class SimpleGUI {
         canvasSouth.setLayout(new BoxLayout(canvasSouth, BoxLayout.LINE_AXIS));
 
         JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
         JTextField textField = new JTextField();
         JButton print = new JButton("Print");
         print.addActionListener(new ActionListener(){
