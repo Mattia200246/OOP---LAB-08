@@ -31,6 +31,7 @@ public final class SimpleGUI {
             public void actionPerformed(ActionEvent e) {
                 controller.setNextString(textField.getText());
                 controller.printCurrentString();
+                textField.setText("");
 
             }
         });
@@ -40,7 +41,7 @@ public final class SimpleGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<String> history = SimpleGUI.this.controller.history();
-                String finalText= " ";
+                String finalText= "";
                 for(String i : history ){
                     finalText= finalText + i + "\n";
                 }
