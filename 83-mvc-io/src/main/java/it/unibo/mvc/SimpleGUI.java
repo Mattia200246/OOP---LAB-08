@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  * A very simple program using a graphical interface.
@@ -12,8 +13,10 @@ import java.awt.event.ActionListener;
 public final class SimpleGUI {
 
     private final JFrame frame = new JFrame();
+    private final Controller controller;
 
-    public SimpleGUI(){
+    public SimpleGUI(Controller controller){
+        this.controller = controller;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel canvas = new JPanel();
         JPanel canvasSouth = new JPanel();
@@ -30,6 +33,18 @@ public final class SimpleGUI {
             }
         });
         JButton viewHistory = new JButton("View History");
+        viewHistory.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                List<String> history = SimpleGUI.this.controller.history();
+                for(var i : history){
+                    textArea.append(i);
+                }
+                
+            }
+            
+        });
 
         frame.setContentPane(canvas);
         canvas.add(textField, BorderLayout.NORTH);
@@ -52,8 +67,7 @@ public final class SimpleGUI {
     }
 
     public static void main(final String... a){
-        SimpleGUI gui = new SimpleGUI();
-        gui.display();
+        new SimpleGUI(new SimpleController()).display();
     }
 
 }
