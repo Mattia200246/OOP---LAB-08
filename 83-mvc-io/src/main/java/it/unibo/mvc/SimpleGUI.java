@@ -29,7 +29,9 @@ public final class SimpleGUI {
         print.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(textField.getText());
+                controller.setNextString(textField.getText());
+                controller.printCurrentString();
+
             }
         });
         JButton viewHistory = new JButton("View History");
@@ -38,10 +40,12 @@ public final class SimpleGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<String> history = SimpleGUI.this.controller.history();
-                for(var i : history){
-                    textArea.append(i);
+                String finalText= " ";
+                for(String i : history ){
+                    finalText= finalText + i + "\n";
                 }
                 
+                textArea.setText(finalText);
             }
             
         });
