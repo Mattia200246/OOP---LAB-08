@@ -59,3 +59,6 @@ public final class PrintStreamView implements DrawNumberView {
     }
 
 }
+
+
+//controllare in DrawNumberViewImpl -> void displayError(String message)
