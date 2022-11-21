@@ -1,5 +1,6 @@
 package it.unibo.mvc;
 
+import java.io.BufferedReader;
 
 /**
  * Encapsulates the concept of configuration.
